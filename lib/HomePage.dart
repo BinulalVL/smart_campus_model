@@ -10,35 +10,40 @@ class HomePage extends StatelessWidget {
     var height=MediaQuery.of(context).size.height;
     var width=MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: PreferredSize(preferredSize: Size.fromHeight(56.0),
+          child: Container(
+            decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.grey[300]!))),
+        child: AppBar(title:Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Text('RAJAGIRI PUBLIC SCHOOL',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+        ),
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    'Smart Campus',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Icon(Icons.notifications),
+            )
+          ],
+        ),
+      )),
 
       body: ListView(
         children: [
-          AppBar(title:Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('RAJAGIRI PUBLIC SCHOOL',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-          ),
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      'Smart Campus',
-                      style: TextStyle(fontSize: 16.0),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Icon(Icons.notifications),
-              )
-            ],
-          ),
+
           Container(
             height: height/5.8,
      //        color: Colors.yellow,
