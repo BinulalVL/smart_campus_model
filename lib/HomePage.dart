@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:project_class/widget/circle_container.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+   HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+   int _selectedIndex = 0;
+   //int index=5;
 
   @override
   Widget build(BuildContext context) {
@@ -148,9 +156,12 @@ class HomePage extends StatelessWidget {
                           color: Color(0xFF395ba9), ),
                         child: Row(
                           children: [
-                            Container(
-                              height: height/15,
-                              width:width/5,decoration: BoxDecoration(image: DecorationImage(image: AssetImage('lib/Assets/books.png'))),),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 4.0),
+                              child: Container(
+                                height: height/10,
+                                width:width/5,decoration: BoxDecoration(image: DecorationImage(image: AssetImage('lib/Assets/book2.png'))),),
+                            ),
                             Column(mainAxisAlignment: MainAxisAlignment.start,children:[ Padding(
                               padding: const EdgeInsets.only(top: 15.0),
                               child: Text('Subjects',style: TextStyle( color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
@@ -196,6 +207,46 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-    ),]));
+    ),])
+    ,
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month_outlined),
+            label: 'Attendance',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assessment),
+            label: 'Exams',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.credit_card),
+            label: 'Fees',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'Chat',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        unselectedItemColor:  Colors.grey, // Set default icon color to grey
+        showUnselectedLabels: true,
+        selectedItemColor: Color(0xFF2a4f9c), // Set pressed icon color to violet
+        // unselectedLabelStyle: TextStyle(color: Colors.grey), // Set default label color to grey
+        // selectedLabelStyle: TextStyle(color: Colors.purple),
+        // Set selected label color to violet
+        onTap: _onItemTapped,
+      ),);
+
   }
+
+   void _onItemTapped(int index) {
+     setState(() {
+       _selectedIndex = index;
+     });
+   }
 }
