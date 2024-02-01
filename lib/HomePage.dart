@@ -137,8 +137,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            height: height/2.5,
-         //`  color: Colors.yellow,
+            height: height/2.6,
+
+         //  color: Colors.yellow,
             child: Row(
               children: [
                 Container(
@@ -207,7 +208,118 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-    ),])
+    ),
+     Padding(
+       padding: const EdgeInsets.only(top: 8.0),
+       child: Container(height: height/9.3,
+           // color: Colors.orange,
+       child: ListView(
+         scrollDirection: Axis.horizontal,
+         children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Container(
+              width: width/5,
+          //    color:Color(0xFFb1c6ff),
+              child: Column(
+                children: [
+                  Container(
+                    height: height/15,
+                    width: height/15,
+                    decoration: BoxDecoration(
+                        color:Color(0xFFb1c6ff),
+                        borderRadius: BorderRadius.circular(100)),
+                  ),
+                  Text('ClassDiary',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),)
+                ],
+              ),
+            ),
+          ),
+           Padding(
+             padding: const EdgeInsets.only(left: 8.0),
+             child: Container(
+               width: width/5,
+             //  color: Color(0xFFb1c6ff),
+               child: Column(
+                 children: [
+                   Container(
+                     height: height/15,
+                     width: height/15,
+                     decoration: BoxDecoration(
+                         color:Color(0xFFb1c6ff),
+                         borderRadius: BorderRadius.circular(100)),
+                   ),
+                   Text('Assignment',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),)
+                 ],
+               ),
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.only(left: 8.0),
+             child: Container(
+               width: width/5,
+               //  color: Color(0xFFb1c6ff),
+               child: Column(
+                 children: [
+                   Container(
+                     height: height/15,
+                     width: height/15,
+                     decoration: BoxDecoration(
+                         color:Color(0xFFb1c6ff),
+                         borderRadius: BorderRadius.circular(100)),
+                   ),
+                   Text('Leave',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),
+                   Text('Application',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),
+                 ],
+               ),
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.only(left: 8.0),
+             child: Container(
+               width: width/5,
+               //  color: Color(0xFFb1c6ff),
+               child: Column(
+                 children: [
+                   Container(
+                     height: height/15,
+                     width: height/15,
+                     decoration: BoxDecoration(
+                         color:Color(0xFFb1c6ff),
+                         borderRadius: BorderRadius.circular(100)),
+                   ),
+                   Text('Meeting',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),
+                   Text('Shedular',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),
+                 ],
+               ),
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.only(left: 8.0),
+             child: Container(
+               width: width/5,
+               //  color: Color(0xFFb1c6ff),
+               child: Column(
+                 children: [
+                   Container(
+                     height: height/15,
+                     width: height/15,
+                     decoration: BoxDecoration(
+                         color:Color(0xFFb1c6ff),
+                         borderRadius: BorderRadius.circular(100)),
+                   ),
+                   Text('Event',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),
+                   Text('Calendar',style: TextStyle(fontSize:11,fontWeight: FontWeight.bold),)
+                 ],
+               ),
+             ),
+           )
+         ],
+       ),
+
+       ),
+     )
+        ])
     ,
       bottomNavigationBar: BottomNavigationBar(
         items: [
