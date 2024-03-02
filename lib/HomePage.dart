@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:project_class/Themes/theme_data.dart';
 import 'package:project_class/widget/circle_container.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,8 +13,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  final theme themedata=new theme();
 
   bool isExpanded = false;
+  ScrollController _scrollController = ScrollController();
+
+  void scrollToBottom() {
+    _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeOut,
+    );
+  }
 
   void toggleExpansion() {
     setState(() {
@@ -69,7 +80,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Container(
             height: height / 5.8,
-            //     color: Colors.yellow,
+               color:themedata.bgcolor,
             child: Stack(
               children: [
                 Align(
@@ -166,12 +177,14 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
               child: Container(
-            child: ListView(children: [
+            child: ListView(
+              controller:_scrollController,
+                children: [
               Container(
                 height: height / 9.3,
-                // color: Colors.green,
+                //color: Colors.green,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: themedata.bgcolor,
                     border: Border(
                         bottom:
                             BorderSide(width: 1, color: Colors.grey[300]!))),
@@ -217,7 +230,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 height: height / 2.62,
-                color: Colors.white,
+                color: themedata.bgcolor,
                 child: Row(
                   children: [
                     Container(
@@ -234,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
-                                  color: Color(0xff004e89) //Color(0xFFeac5d8),
+                                  color: themedata.primaryContainerColor //Color(0xFFeac5d8),
                                   ),
                               child: Row(
                                 children: [
@@ -257,9 +270,9 @@ class _HomePageState extends State<HomePage> {
                                           padding:
                                               const EdgeInsets.only(top: 15.0),
                                           child: Text(
-                                            'Subjects',
+                                            'Request',
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color:  Color(0xff2F4378),
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold),
                                           ),
@@ -278,7 +291,7 @@ class _HomePageState extends State<HomePage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
-                                  color: Color(0xFFbde0fe),
+                                  color:themedata.primaryContainerColor//Color(0xFFbde0fe),
                                 ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -358,8 +371,7 @@ class _HomePageState extends State<HomePage> {
                                               circularStrokeCap:
                                                   CircularStrokeCap
                                                       .butt, // round the corners
-                                              progressColor: Color(
-                                                  0xFF78c0e0), // color of the progress bar
+                                              progressColor:  Color(0xffffdad6), // color of the progress bar
                                               backgroundColor: Colors.grey
                                                   .shade200, // color of the background
                                             ),
@@ -378,7 +390,8 @@ class _HomePageState extends State<HomePage> {
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 border: Border.all(
-                                                    color: Colors.grey)),
+                                                    color: Colors.grey),
+                                            borderRadius: BorderRadius.circular(100)),
                                           ),
                                         ),
                                         Text(
@@ -392,9 +405,8 @@ class _HomePageState extends State<HomePage> {
                                             height: height / 50,
                                             width: height / 50,
                                             decoration: BoxDecoration(
-                                                color: Color(0xFF78c0e0),
-                                                border: Border.all(
-                                                    color: Colors.grey)),
+                                                color:  Color(0xffffdad6),
+                                               borderRadius: BorderRadius.circular(100)),
                                           ),
                                         ),
                                         Text(
@@ -421,10 +433,10 @@ class _HomePageState extends State<HomePage> {
                                 width: width / 1.6,
                                 height: height / 4,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey[300]!),
+                              //    border: Border.all(color: Colors.grey[300]!),
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
-                                  color: Color(0xFFb1c6ff),
+                                  color: themedata.primaryContainerColor,//Color(0xFFb1c6ff),
                                 ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -472,7 +484,7 @@ class _HomePageState extends State<HomePage> {
                                                 child: Card(
                                                   shape: CircleBorder(),
                                                   elevation: 30,
-                                                  color: Colors.grey.shade50,
+                                                  color: Colors.white,
                                                   child: Center(
                                                     child: Text(
                                                       "62%", // text in the center of the chart
@@ -488,10 +500,8 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                               circularStrokeCap: CircularStrokeCap
                                                   .round, // round the corners
-                                              progressColor: Color(
-                                                  0xFF8e94f2), // color of the progress bar
-                                              backgroundColor: Colors.grey
-                                                  .shade200, // color of the background
+                                              progressColor:  Color(0xffb1c6ff), // color of the progress bar
+                                              backgroundColor: Colors.grey.shade200, // color of the background
                                             ),
                                           ),
                                         ),
@@ -509,7 +519,7 @@ class _HomePageState extends State<HomePage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
-                                  color:Color(0xff054a91)// Color(0xFF023e7d),
+                                  color:themedata.primaryContainerColor// Color(0xFF023e7d),
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -534,7 +544,7 @@ class _HomePageState extends State<HomePage> {
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18,
-                                            color: Colors.white),
+                                            color:  Color(0xff2F4378)),
                                       ),
                                     )
                                   ],
@@ -548,11 +558,11 @@ class _HomePageState extends State<HomePage> {
               ),
               if (isExpanded) ...[
                 Padding(
-                  padding: const EdgeInsets.only(left: 10.0, bottom: 2),
+                  padding: const EdgeInsets.only(),
                   child: Container(
                     height: height / 4,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: themedata.bgcolor,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -563,7 +573,7 @@ class _HomePageState extends State<HomePage> {
                               padding:
                                   const EdgeInsets.only(left: 10.0, bottom: 2),
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 6.0),
+                                padding: const EdgeInsets.only(top: 6.0,left: 10),
                                 child: Text(
                                   'More features',
                                   style: TextStyle(
@@ -588,7 +598,7 @@ class _HomePageState extends State<HomePage> {
                                     isExpanded ? 'Collapse' : 'View All',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 13,
+                                        fontSize: 14,
                                         color: Colors.blue),
                                   ),
                                 ),
@@ -817,11 +827,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ] else ...[
                 Padding(
-                  padding: const EdgeInsets.only(left: 10.0, bottom: 2),
+                  padding: const EdgeInsets.only(),
                   child: Container(
                     height: height / 6.8,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color:themedata.bgcolor,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -832,7 +842,7 @@ class _HomePageState extends State<HomePage> {
                               padding:
                                   const EdgeInsets.only(left: 10.0, bottom: 2),
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 6.0),
+                                padding: const EdgeInsets.only(top: 6.0,left: 10),
                                 child: Text(
                                   'More features',
                                   style: TextStyle(
@@ -842,7 +852,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             SizedBox(
-                              width: width / 2.8,
+                              width: width / 2.4,
                             ),
                             Padding(
                               padding:
@@ -852,12 +862,20 @@ class _HomePageState extends State<HomePage> {
                                 child: InkWell(
                                   onTap: () {
                                     toggleExpansion();
+
+                                    Future.delayed(const Duration(milliseconds: 50), () {
+                                      setState(() {
+                                        scrollToBottom();
+                                        // Here you can write your code for open new view
+                                      });
+                                    });
+
                                   },
                                   child: Text(
                                     isExpanded ? 'Collapse' : 'View All',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 13,
+                                        fontSize: 14,
                                         color: Colors.blue),
                                   ),
                                 ),
