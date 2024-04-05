@@ -41,14 +41,14 @@ class _HomePageState extends State<HomePage> {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.0),
           child: Container(
-            decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: Colors.grey[300]!))),
+            decoration: BoxDecoration(border:Border(bottom: BorderSide(color: Colors.grey[300]!))),
             child: AppBar(
+              backgroundColor:themedata.appbarColor,
               title: Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   'RAJAGIRI PUBLIC SCHOOL',
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold,color: Color(0xff2F4378)),
                 ),
               ),
               flexibleSpace: Column(
@@ -62,8 +62,9 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         'Smart Campus',
-                        style: TextStyle(fontSize: 16.0),
+                        style: TextStyle(fontSize: 16.0,color: Color(0xff2F4378)),
                       ),
+
                     ),
                   ),
                 ],
@@ -181,18 +182,19 @@ class _HomePageState extends State<HomePage> {
               controller:_scrollController,
                 children: [
               Container(
-                height: height / 9.3,
+                height: height /8,
                 //color: Colors.green,
                 decoration: BoxDecoration(
                     color: themedata.bgcolor,
-                    border: Border(
-                        bottom:
-                            BorderSide(width: 1, color: Colors.grey[300]!))),
+                    // border: Border(
+                    //     bottom:
+                    //         BorderSide(width: 1, color: Colors.grey[300]!))
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 18.0, bottom: 4),
+                      padding: const EdgeInsets.only(left: 18.0, bottom: 8),
                       child: Text(
                         'Attendance',
                         style: TextStyle(
@@ -229,21 +231,21 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Container(
-                height: height / 2.62,
+                height: height / 2.8,
                 color: themedata.bgcolor,
                 child: Row(
                   children: [
                     Container(
-                      // color:Colors.green,
+                    //   color:Colors.green,
                       width: width / 2,
                       child: Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                left: 8.0, right: 4, top: 8),
+                                left: 13.0, top: 8),
                             child: Container(
-                              width: width / 1.6,
-                              height: height / 9,
+                              width: width / 2.3,
+                              height: height / 11,
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
@@ -254,12 +256,12 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 4.0),
                                     child: Container(
-                                      height: height / 10,
-                                      width: width / 5,
+                                      height: height / 18,
+                                      width: width / 6,
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
                                               image: AssetImage(
-                                                  'lib/Assets/book2.png'))),
+                                                  'lib/Assets/report-card(1).png'))),
                                     ),
                                   ),
                                   Column(
@@ -268,13 +270,24 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsets.only(top: 15.0),
-                                          child: Text(
-                                            'Request',
-                                            style: TextStyle(
-                                                color:  Color(0xff2F4378),
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.bold),
+                                              const EdgeInsets.only(top: 15.0,left: 6),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                'Report',
+                                                style: TextStyle(
+                                                    color:  Color(0xff2F4378),
+                                                    fontSize: 17,
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                              Text(
+                                                'Card',
+                                                style: TextStyle(
+                                                    color:  Color(0xff2F4378),
+                                                    fontSize: 17,
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                            ],
                                           ),
                                         )
                                       ])
@@ -284,10 +297,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Padding(
                               padding: const EdgeInsets.only(
-                                  left: 8.0, right: 4, top: 8),
+                                  left: 13.0, top: 8),
                               child: Container(
-                                width: width / 1.6,
-                                height: height / 4,
+                                width: width / 2.3,
+                                height: height / 4.2,
                                 decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
@@ -298,59 +311,35 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 10, top: 15),
+                                          left: 10, top: 15,bottom: 10),
                                       child: Text(
                                         'Fees',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 18,
+                                            fontSize: 17,
                                             color: Color(0xff2F4378)),
                                       ),
                                     ),
+
                                     Row(
                                       children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10),
-                                          child: Text(
-                                            'Total :',
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                color: Color(0xff2F4378)),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10),
-                                          child: Text(
-                                            '2500',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15,
-                                                color: Color(0xff2F4378)),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        SizedBox(width: width / 8),
+                                        SizedBox(width: width / 11),
                                         Container(
-                                          height: width / 3.1,
-                                          width: width / 3.1,
+                                          height: width / 3.2,
+                                          width: width / 3.2,
                                           child: Center(
                                             child: CircularPercentIndicator(
                                               radius: width /
-                                                  6.5, // size of the chart
+                                                  7, // size of the chart
                                               lineWidth: width /
-                                                  18, // width of the progress bar
+                                                  20, // width of the progress bar
                                               animation:
                                                   true, // animate the chart
                                               percent:
                                                   0.80, // percentage value (0.62 for 62%)
                                               center: SizedBox(
-                                                height: width / 4.5,
-                                                width: width / 4.5,
+                                                height: width / 4.8,
+                                                width: width / 4.8,
                                                 child: Card(
                                                   shape: CircleBorder(),
                                                   elevation: 30,
@@ -378,8 +367,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ),
                                       ],
-                                    ),
-                                    Row(
+                                    ),Row(
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.only(
@@ -391,7 +379,7 @@ class _HomePageState extends State<HomePage> {
                                                 color: Colors.white,
                                                 border: Border.all(
                                                     color: Colors.grey),
-                                            borderRadius: BorderRadius.circular(100)),
+                                                borderRadius: BorderRadius.circular(100)),
                                           ),
                                         ),
                                         Text(
@@ -406,7 +394,7 @@ class _HomePageState extends State<HomePage> {
                                             width: height / 50,
                                             decoration: BoxDecoration(
                                                 color:  Color(0xffffdad6),
-                                               borderRadius: BorderRadius.circular(100)),
+                                                borderRadius: BorderRadius.circular(100)),
                                           ),
                                         ),
                                         Text(
@@ -414,7 +402,8 @@ class _HomePageState extends State<HomePage> {
                                           style: TextStyle(fontSize: 12),
                                         ),
                                       ],
-                                    )
+                                    ),
+
                                   ],
                                 ),
                               )),
@@ -422,16 +411,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Container(
-                      // color:Colors.blue,
+                     // color:Colors.blue,
                       width: width / 2,
                       child: Column(
                         children: [
                           Padding(
                               padding: const EdgeInsets.only(
-                                  left: 4.0, right: 8, top: 8),
+                                  right: 13, top: 8),
                               child: Container(
-                                width: width / 1.6,
-                                height: height / 4,
+                                width: width / 2.3,
+                                height: height / 4.2,
                                 decoration: BoxDecoration(
                               //    border: Border.all(color: Colors.grey[300]!),
                                   borderRadius:
@@ -448,7 +437,7 @@ class _HomePageState extends State<HomePage> {
                                         'Attendance',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 18,
+                                            fontSize: 17,
                                             color: Color(0xff2F4378)),
                                       ),
                                     ),
@@ -464,23 +453,23 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     Row(
                                       children: [
-                                        SizedBox(width: width / 8),
+                                        SizedBox(width: width / 11),
                                         Container(
-                                          height: width / 3.1,
-                                          width: width / 3.1,
+                                          height: width / 3.5,
+                                          width: width / 3.5,
                                           child: Center(
                                             child: CircularPercentIndicator(
                                               radius: width /
-                                                  6.5, // size of the chart
+                                                  7, // size of the chart
                                               lineWidth: width /
-                                                  18, // width of the progress bar
+                                                  20, // width of the progress bar
                                               animation:
                                                   true, // animate the chart
                                               percent:
                                                   0.62, // percentage value (0.62 for 62%)
                                               center: SizedBox(
-                                                height: width / 4.5,
-                                                width: width / 4.5,
+                                                height: width / 4.8,
+                                                width: width / 4.8,
                                                 child: Card(
                                                   shape: CircleBorder(),
                                                   elevation: 30,
@@ -501,7 +490,7 @@ class _HomePageState extends State<HomePage> {
                                               circularStrokeCap: CircularStrokeCap
                                                   .round, // round the corners
                                               progressColor:  Color(0xffb1c6ff), // color of the progress bar
-                                              backgroundColor: Colors.grey.shade200, // color of the background
+                                              backgroundColor: Colors.grey.shade300, // color of the background
                                             ),
                                           ),
                                         ),
@@ -512,10 +501,10 @@ class _HomePageState extends State<HomePage> {
                               )),
                           Padding(
                               padding: const EdgeInsets.only(
-                                  left: 4.0, right: 8, top: 8),
+                                   right: 13, top: 8),
                               child: Container(
-                                width: width / 1.6,
-                                height: height / 9,
+                                width: width / 2.3,
+                                height: height / 11,
                                 decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
@@ -543,7 +532,7 @@ class _HomePageState extends State<HomePage> {
                                         'TimeTable',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 18,
+                                            fontSize: 17,
                                             color:  Color(0xff2F4378)),
                                       ),
                                     )
@@ -560,7 +549,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(),
                   child: Container(
-                    height: height / 4,
+                    height: height / 3.8,
                     decoration: BoxDecoration(
                       color: themedata.bgcolor,
                     ),
@@ -712,6 +701,36 @@ class _HomePageState extends State<HomePage> {
                                           ],
                                         ),
                                       ),
+                                    ),Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 8.0, top: 4),
+                                      child: Container(
+                                        width: width / 5,
+                                        //  color: Color(0xFFb1c6ff),
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              height: height / 15,
+                                              width: height / 15,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.blue[100],
+                                                  borderRadius:
+                                                  BorderRadius.circular(
+                                                      100),
+                                                  image: DecorationImage(
+                                                      image: AssetImage(
+                                                          'lib/Assets/handshake.png'),fit: BoxFit.contain)),
+                                            ),
+                                            Text(
+                                              'Meeting',
+                                              style: TextStyle(
+                                                  fontSize: 11,
+                                                  fontWeight:
+                                                  FontWeight.bold),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -721,37 +740,7 @@ class _HomePageState extends State<HomePage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 8.0, top: 4),
-                                        child: Container(
-                                          width: width / 5,
-                                          //  color: Color(0xFFb1c6ff),
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                height: height / 15,
-                                                width: height / 15,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            100),
-                                                    image: DecorationImage(
-                                                        image: AssetImage(
-                                                            'lib/Assets/meetingg.png'))),
-                                              ),
-                                              Text(
-                                                'Meeting',
-                                                style: TextStyle(
-                                                    fontSize: 11,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
+
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             left: 8.0, top: 4),
@@ -813,7 +802,37 @@ class _HomePageState extends State<HomePage> {
                                             ],
                                           ),
                                         ),
-                                      )
+                                      ),Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 8.0, top: 4),
+                                        child: Container(
+                                          width: width / 5,
+                                          //  color: Color(0xFFb1c6ff),
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                height: height / 15,
+                                                width: height / 15,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    borderRadius:
+                                                    BorderRadius.circular(
+                                                        100),
+                                                    image: DecorationImage(
+                                                        image: AssetImage(
+                                                            'lib/Assets/book2.png'))),
+                                              ),
+                                              Text(
+                                                'Subjects',
+                                                style: TextStyle(
+                                                    fontSize: 11,
+                                                    fontWeight:
+                                                    FontWeight.bold),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -829,7 +848,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(),
                   child: Container(
-                    height: height / 6.8,
+                    height: height / 6.5,
                     decoration: BoxDecoration(
                       color:themedata.bgcolor,
                     ),
@@ -840,7 +859,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 10.0, bottom: 2),
+                                  const EdgeInsets.only(left: 10.0, bottom: 4),
                               child: Padding(
                                 padding: const EdgeInsets.only(top: 6.0,left: 10),
                                 child: Text(
@@ -896,7 +915,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(left: 8.0, top: 4),
+                                      const EdgeInsets.only(left: 10.0, top: 4),
                                   child: Container(
                                     width: width / 5,
                                    // height: height/14,
@@ -928,7 +947,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(left: 8.0, top: 4),
+                                      const EdgeInsets.only(left: 18.0, top: 4),
                                   child: Container(
                                     width: width / 5,
                                     //  color: Color(0xFFb1c6ff),
@@ -957,7 +976,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(left: 8.0, top: 4),
+                                      const EdgeInsets.only(left: 19.0, top: 4),
                                   child: Container(
                                     width: width / 5,
                                     //  color: Color(0xFFb1c6ff),
@@ -986,7 +1005,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(left: 8.0, top: 4),
+                                      const EdgeInsets.only(left: 19.0, top: 4),
                                   child: Container(
                                     width: width / 5,
                                     //  color: Color(0xFFb1c6ff),
@@ -996,12 +1015,12 @@ class _HomePageState extends State<HomePage> {
                                           height: height / 15,
                                           width: height / 15,
                                           decoration: BoxDecoration(
-                                              color: Colors.white,
+                                              color: Colors.blue[100],
                                               borderRadius:
                                                   BorderRadius.circular(100),
                                               image: DecorationImage(
                                                   image: AssetImage(
-                                                      'lib/Assets/meetingg.png'))),
+                                                      'lib/Assets/handshake.png'))),
                                         ),
                                         Text(
                                           'Meeting',
@@ -1059,10 +1078,10 @@ class _HomePageState extends State<HomePage> {
                                                   BorderRadius.circular(100),
                                               image: DecorationImage(
                                                   image: AssetImage(
-                                                      'lib/Assets/rcard.png'))),
+                                                      'lib/Assets/exclamation.jpg'))),
                                         ),
                                         Text(
-                                          'Report Card',
+                                          'Request',
                                           style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.bold),
@@ -1070,7 +1089,39 @@ class _HomePageState extends State<HomePage> {
                                       ],
                                     ),
                                   ),
-                                )
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 8.0, top: 4),
+                                  child: Container(
+                                    width: width / 5,
+                                    //  color: Color(0xFFb1c6ff),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: height / 15,
+                                          width: height / 15,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                              BorderRadius.circular(
+                                                  100),
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'lib/Assets/book2.png'))),
+                                        ),
+                                        Text(
+                                          'Subjects',
+                                          style: TextStyle(
+                                              fontSize: 11,
+                                              fontWeight:
+                                              FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
